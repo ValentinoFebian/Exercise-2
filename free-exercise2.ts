@@ -11,58 +11,31 @@ console.log(`${number} is odd number!`);
 
 }
 
-
 // Write a code to check whether the number is prime number or not
 // Example: 7 → 7 is a prime number
 // Example: 6 → 6 is not a prime number
 
-let randomNum: number = 7;
-let primeChecker;
-
-if (randomNum <1) {
-    console.log("This is not prime number");
-} else if (randomNum === 1 || randomNum === 2 ) {
-    console.log("This is prime number")
-} else {
-    for (let i = 2; i < randomNum; i++) {
-        if (randomNum % i === 0) {
-            primeChecker = true
-        } else {
-            primeChecker = false
-        }
-    }
-    if (primeChecker === true) {
-        console.log("This is not prime number");
-    } else {
-        console.log("This is prime number");
-    }
-}
+let randomNum: number = 15
+let contender;
     
-
-/*
-// Old Version
-let randomNum = 15
-
-if (randomNum < 1) {
-    console.log("This number is not prime");
-
-} else if (randomNum === 1 || randomNum === 2) {
-    console.log("This is prime number")
-
-} else if (randomNum > 1) {
-    for (let i = 2; i < randomNum; i++) {
-        if (randomNum % i === 0) {
-            console.log("This is not prime number");
-            
-        } else {
-            console.log("This is prime number")
-        
-        }
-    }
+    if (randomNum < 1) {
+        contender = `${randomNum} is not prime number`;
     
-} 
-*/
+    } else if (randomNum === 1 || randomNum === 2) {
+        contender = `${randomNum} is prime number`;
 
+    } else if (randomNum > 2) {
+        for (let i = 2; i < randomNum; i++) {
+            if (randomNum % i === 0) {
+                contender = `${randomNum} is not prime number`
+                break 
+            } else {
+                contender = `${randomNum} is prime number`
+            }
+        }
+    } 
+
+    console.log(contender);
 
 // Write a code to find the sum of the numbers 1 to N
 // Example: 5 → 1 + 2 + 3 + 4 + 5 = 15
@@ -96,7 +69,7 @@ console.log(totalMultiply)
 let numFib: number = 15
 let a: number = 1
 let b: number = 1
-let c: number;
+let c;
 
 for (let i = 3; i <= numFib; i++ ) {
     c = a + b
